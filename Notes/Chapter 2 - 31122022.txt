@@ -1,0 +1,125 @@
+Chapter 2 - Igniting our App
+
+- What it needs for app to be production ready?
+minify, bundle things, server, remove our console logs, optimization, Caching. 
+To perform this, we need something known as 'bundlers'. Ex: Webpack, Parcel, Vite
+
+- In create-react-app, webpack bundler is used.
+
+HW:
+- Find out the major difference between webpack and parcel.
+- Create-react-app bundler
+- Difference between caret and tilde in package.json
+- Read parcel documentation
+- What are the different type attributes that can be given in script tag?
+- Ignite app 
+
+----
+- Parcel is a bundler package (consisting of JS modules/files). To install, we need package manager(npm / yarn).
+To initialize: 
+$npm init
+ -y : (options)
+- Provide app name, test, version etc.
+- npm init gives us package.json file with our app information.
+- npm will manage lot of packages to run the app. React app can't be built by itself. 
+It needs other packages. Its like maven for UI.
+
+$npm install -D parcel : installs parcel package bundler with D: Developer machine (Dev dependencies)
+$npm install --save-dev parcel : same as above
+-> adds dependencies in package.json file and new file package-lock.json file created. node_modules folder is created.
+- Dependencies means all the packages that our project needs to run.
+- package-lock.json contains the exact version of the packages used in our project in production. 
+package-lock will lock the version and keeps it safe.
+
+Important points about package-lock.json:
+- Do not git ignore package-lock.json
+- It locks the version used in production
+- It needs to be put in git.
+- It maintains the hash/integrity of the version; ensures what exactly the version of parcel 
+running on system is used in production or not.
+
+- node_modules contains packages(Ex:parcel) required for our application. We have dev_dependency as Parcel in our app. 
+This in turn has dependencies of other packages. All are created in node_modules.
+- We do not push node_modules into git repository. It should be gitignored.
+package.json & package-lock.json contains sufficient information to regenerate node_modules.
+
+- Using CDN to load react is not the best way to use React, ReactDOM. Because node_modules will be present in other 
+server than our server. Ideal way is to install react & reactDom packages.
+$npm install react : installs packages in dependencies(available gloablly) in package.json and not only for development use(-D option used).
+$npm i react-dom
+
+- To ignite/execute our app:
+$npx parcel index.html : index.html is starting point of our app
+Gives server, local host url for running the app.
+creates dist, parcel-cache folder. 
+parcel-cache for faster  building, separate space.
+dist keeps the files in minified files.
+The above command generates a minified faster version of our development build to be hosted on the server for faster execution.
+
+IMP***: 
+- Never ever touch or modify node_modules.
+- Never ever touch or modify package, package-lock.json.
+
+- import & exports doesnt work in scripts whem imported. Browser doesnt understand this. 
+So we have to use type = "module" in script tag to make browser understand it as a module that needs to be imported.
+- As soon as you save in vs code, changes are reflected in server, This is called as HMR- Hot module replacement. 
+Parcel keeps track of all the packages in its environment. Any change is reflected automagically.
+- HMR has File Watcher Algorithms : written in c++: diffie algorithm
+
+$npx parcel index.html : generates developer build
+$npx parcel build index.html : generates production build, creates 3 files in dist folder: 
+index.js, index.html, index.css for entire project code; bundling everything into 3 files
+
+***Parcel Important Features: with less time for build
+- HMR : Hot Module Replacement
+- File Watcher Algorithm : C++
+- Bundling
+- Minify
+- Cleaning Our code
+- Manifests Dev and Production build
+- Super fast build algorithm
+- Image optimization : minifies
+- Caching while development
+- Compression : renames variables
+- Compatible with older versions of browsers
+- HTTPS on Dev
+- Manages port numbers
+- Consistent hashing algorithms
+- Zero config bundler
+- Creates a Server
+
+
+----
+- Media(images, video,audio) are the heaviest objects in Browser.
+- node_modules will not be available in website.
+- if images comes from backend, parcel doesnt minifies/optimize. 
+- Parcel is caching things, so subsequent builds take less time(fast) to build. parcel_cache folder contains cache files for caching.	     	
+- To make your dev/prod build with https security:
+	$npm parcel index.html --https
+- In local https doesnt work because we are using localhost. Browser doesnt trust localhost.
+- Parcel-cache should be kept in gitignore. It shouldnt be moved to git at any cost.
+IMP*** - Anything which can be generated on server should be gitignored. It shouldnt be pushed to git.
+
+Q. Why is React performant?
+- React is fast by itself. But it needs lot of other things to make our application faster. 
+React uses bundler(parcel) as dependency which in turn has other dependency which altogether makes our app fast & performant.
+
+- Parcel is zero config bundler. Parcel orchestrates all the important features through other packages in node_modules.
+
+IMP*** Transitive dependencies:
+React needs Parcel as dependency. Parcel inturn needs plugins, utils etc. as dependencies. This dependencies inturn needs 
+other dependencies to make parcel (HMR, Compression, minify, optimization etc. - Parcel features) & react to work fast & performant. 
+This is called as Transitive dependencies.
+- Dependencies can be seen in package & package-lock.json files.
+
+- browserslist : provides our app compatible to specific versions of browser. Include in package.json
+
+***Documentation references:
+MDN docs
+Parceljs
+Reactjs
+
+--
+To checkout from one branch to new branch
+$git checkout -b br2_day2_ignite br1_day1_inception
+$git checkout -b <new> <exist_branch>

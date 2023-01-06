@@ -1,0 +1,9 @@
+# Add files that are not to be pushed to GIT and can be generaated on server directly
+
+# Node modules
+
+node_modules
+
+.parcel-cache
+
+dist

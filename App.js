@@ -1,10 +1,13 @@
+import React from "react";
+import ReactDOM from "react-dom/client"
+
 const heading1 = React.createElement(
   "h1",
   {
     id: "head1",
     className: "headClass",
   },
-  "Actionable Insights from ",
+  "React Project from ",
   React.createElement("i", null, "Pramod,"),
   " Welcome!"
 );
@@ -15,7 +18,7 @@ const heading2 = React.createElement(
     id: "head2",
     className: "headClass2",
   },
-  "This is from React CDN!"
+  "This is from Second element!"
 );
 
 const container = React.createElement("div", { id: "container" }, [

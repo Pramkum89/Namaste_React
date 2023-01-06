@@ -1,0 +1,129 @@
+Chapter 02 - Assignment - Igniting our App 
+ 
+# Theory Assignment:  
+●  - What is `NPM`? 
+- It is a package manager. It comes with node installation. It provides cli to install npm packages available to build our app.
+$npm -v : npm version
+$node -v : node version 
+$npm list: lists the packages installed in our app
+●  - What is `Parcel/Webpack`? Why do we need it? 
+- Parcel/webpack is a bundler. React itself cannot provide production build. These bundlers provide features which help to 
+build the project fast & performant. Some of the important features include:
+ ***Parcel Important Features: with less time for build
+- HMR : Hot Module Replacement
+- File Watcher Algorithm : C++
+- Bundling
+- Minify
+- Cleaning Our code
+- Manifests Dev and Production build
+- Super fast build algorithm
+- Image optimization : minifies
+- Caching while development
+- Compression : renames variables
+- Compatible with older versions of browsers
+- HTTPS on Dev
+- Manages port numbers
+- Consistent hashing algorithms
+- Zero config bundler
+- Creates a Server
+
+●  - What is `.parcel-cache` 
+- parcel-cache is the memory space parcel creates for its processing during installation. 
+The build is cached and processed with algoorithms to detect new changes in our entire package and builds our app fast. 
+
+●  - What is `npx` ?  
+- Command used to execute packages. Following command executes development build for our app.
+
+●  - What is difference between `dependencies` vs `devDependencies`  
+- Dependencies are the packages that is required for production build to run our app.
+DevDependencies are the packages that is required for local (development) build to run our app.
+
+●  - What is Tree Shaking?  
+- Tree shaking is a term commonly used within a JavaScript context to describe the removal of dead code.
+- It relies on the import and export statements to detect if code modules are exported and imported for use between JavaScript files.
+- In modern JavaScript applications, we use module bundlers (e.g., webpack or Rollup) to automatically remove dead code 
+when bundling multiple JavaScript files into single files. This is important for preparing code that is production ready,
+ for example with clean structures and minimal file size.
+ 
+●  - What is Hot Module Replacement?
+- Whenever any code changes are done in any of the file, instead of refreshing the browser, only the modules(js files) will be 
+replaced with the new changes. This will provide the new values in browser without refreshing the browser. 
+Helps developer very much, without having to refresh browser to know the small changes done. 
+Refer below for understanding in depth:
+https://medium.com/js-imaginea/hot-module-replacement-8b634c2a4348
+https://www.youtube.com/watch?v=CyCKSNalpEE
+
+
+●  - List down your favourite 5 superpowers of Parcel and describe any 3 of them in your  own words.  
+- Hot Module Replacement
+- Minifies
+- Provides server
+- Compression
+- File watcher Algorithms
+- Tree shaking
+- Optimization of media files
+- Caching
+- Zero config builder
+- Bundling
+
+●  - What is `.gitignore`? What should we add and not add into it?  
+- gitignore is the file provided to ignore the files that needs to be pushed into git reository. 
+Any files that can be generated on the server should be added in gitignore file.
+- node_modules, parcel-cache, dist : to be added into git ignore
+- package, package-lock.json : not to be added in gitignore
+
+●  - What is the difference between `package.json` and `package-lock.json`  
+- package.json gets added when you initialize the npm. package-lock.json gets created when you install any bundler package.
+- package.json gives info about app dependencies, description, name, approximate version. package-lock.json gives the exact version of the dependencies 
+that is used in project that is required.
+
+●  - Why should I not modify `package-lock.json`?
+-  NPM is updating the package-lock. json file to accurately reflect all the dependencies it has downloaded since it may 
+have gotten more up-to-date versions of some of them.
+- It gives information of the app in working state with exact version of dependencies. So it shouldn't be manually modified.
+
+●  - What is `node_modules` ? Is it a good idea to push that on git?
+- generated when a package bundler is installed with all the dependencies. 
+- Not to be pushed to git because it can be generated from package, package-lock.json file on server.  
+
+●  - What is the `dist` folder?
+- Parcel bundles our application files into 3 main files in dist folder : index.html, index.css,index.js minified files of our applications.
+
+●  - What is `browserlists`.
+- browserlists provides information of which all browsers and versions compatible to the application. 
+Query can be provided which specifies the compatible browsers of the application. Check documentation on creating query.
+
+●  Read about dif bundlers: vite, webpack, parcel 
+- Webpack is great feature-packed and heavy. 
+Parcel is great for beginners and works out of the box. 
+Vite is an opinionated super of Rollup and uses ES build under the hood to enhance performance. 
+Lastly, Snowpack, with its unbundled development is the feature.
+https://blog.sessionstack.com/how-javascript-works-a-guide-to-build-tools-exploring-webpack-parcel-rollup-es-build-and-2089bcf0ddb4
+
+●  Read about:  ^ - caret and ~ - tilda  
+- tilda ~version “Approximately equivalent to version”, will update you to all future patch versions,
+ without incrementing the minor version. ~1.2.3 will use releases from 1.2.3 to <1.3.0.
+
+- caret ^version “Compatible with version”, will update you to all future minor/patch versions, 
+without incrementing the major version. ^2.3.4 will use releases from 2.3.4 to <3.0.0.
+Semantic versioning: Major.Minor.Patch 2.3.12
+
+●  Read about Script types in html (MDN Docs) 
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script
+
+# Project Assignment:  - In your existing project  
+●  - intialize `npm` into your repo  
+●  - install `react` and `react-dom`  
+●  - remove CDN links of react  
+●  - install parcel  
+●  - ignite your app with parcel  
+●  - add scripts for “start” and “build” with parcel commands  
+●  - add `.gitignore` file  
+●  - add `browserlists`  
+●  - build a production version of your code using `parcel build`
+
+# References  
+●  Creating your own create-react-app  
+●  Parcel Documentation  
+●  Parcel on Production  
+●  BrowsersList:  https://browserslist.dev/ 
