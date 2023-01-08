@@ -1,0 +1,107 @@
+Session 1: 24/12/2022
+
+- React is a library.
+- It takes minimum effort for a library to put it inside our code.
+Ex: Carousel is a library.
+
+Tools used:
+- Google chrome
+- VS code editor
+- Extensions: Check screenshot
+
+HW:
+- What does emmet do?
+- What is CDN?
+- What is crossorigin in cdn?
+- What is DOM?
+- What is createElement in React?
+- What is the difference between async and defer? Ref: Akshay saini vid on youtube
+- Why css should be written inside head tag?
+- What is rel,href, link tag?
+
+******
+- document from html comes from browser api's. JS engine provides it.
+- Shortest program of Javascript: empty file
+- Shortest program of React: importing react library(cdn links) in script tag.
+- CDN imports two links:
+1. react - it is the core library of react
+2. react-dom - it is the web version of React. Gives access to Document Object Model(DOM).
+- React element is an object.
+- Generally, in all apps, we have one single root and one render method. We have portals to have multiple root(Advanced concept).
+
+IntvQ: - If multiple elements are present inside root, then React overrides the root element.
+Ex:   <div id="root">
+        <div id"title">Hello World!</div>
+        <div id"title">Hello World!</div>
+        <div id"title">Hello World!</div>
+        <div id"title">Hello World!</div>
+        <div id"title">Hello World!</div>
+      <!-- <h1>Namaste Everyone from html!</h1> -->
+    </div>
+	
+Output: root element is overridden. hello World not shown in browser.
+- "Not rendered" is written generally in React. 
+If any application shows "Not rendered", it means there is issue, root not configured correctly.
+
+- React came with the idea of writing html inside Javascript. But initial createElement is not user/developer friendly. 
+That is when JSX came into picture in ES6.
+- When id is used in html tag to refere element, use # in css file with css properties.
+
+Assignment :
+
+1. What is Emmet? 
+- Emmet is a add-on for your text editor. It allows you to type shortcuts which are then expanded into full pieces of code.
+By using emmet, it allows developers to type less and save both on keypress and time.
+
+2.  Difference between a Library and Framework? 
+- https://www.youtube.com/watch?v=sXA1zpv4DhA
+- Library has rules & restrictions (HOME) while framework has mor rules  restrictions (University).
+- In Library (JQuery), you are calling the code to the library whereas in Framework (Django), framework is calling your code.
+Ex: you can call Jquery code (some function) anytime in your code, but in framework, templates folder should be as it is. 
+It calls your code.
+
+3. What is CDN? Why do we use it?
+- CDN is content delivery network. It allows us to access the static web information from the nearest servers. 
+- Increases Perfformance, less time to access the web information.
+- https://reactjs.org/docs/cdn-links.html
+
+4. Why is React known as React?
+- React is named React because of its ability to react to changes in data. 
+When the data in a React component changes, React will automatically re-render the component so that it reflects the new data. 
+This makes it easy to create performant user interfaces that always look up-to-date.
+
+React was created by Jordan Walke, a software engineer at Facebook. It was first used internally at Facebook to power News Feed 
+and other user interface elements. After seeing how well it performed, Jordan open-sourced React 
+and made it available to the world. Since then, React has become one of the most popular JavaScript libraries in use today.
+
+5. What is crossorigin in script tag? 
+- https://www.youtube.com/watch?v=tcLW5d0KAYE
+CORS - Cross Origin Resource Sharing
+https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+
+6. What is diference between React and ReactDOM
+- React library is responsible for creating views and ReactDOM library is responsible to actually render UI in the browser.
+- The reason React and ReactDOM were split into two libraries was due to the arrival of React Native.
+React contains functionality utilised in web and mobile apps. ReactDOM functionality is utilised only in web apps.
+
+7. What is difference between react.development.js and react.production.js files via CDN?
+- react.development.js is used for development and is bigger in size. Not so stable.
+react.production.js is used for production environment. It is minified version of library. Stable.
+- Development mode includes useful warnings and gives you access to tools that make development and debugging easier. 
+Production mode minifies your code and better represents the performance your app will have on end users' devices.
+
+8. What is async and defer? - see my Youtube video ; 
+Ref Screenshot for understanding
+- In normal script tag, HTML parsing is done. As soon as script is found, script fetching is done from network 
+and then execution starts. Only after script execution is completed, HTMl parsing is continued.
+- In case of async, HTML parsing and script fetching happens asynchronously. Once script is loaded/fetched, 
+then script execution happens. Only after script execution is completed, then only hrml parsing is continued.
+- In case of defer, HTML parsing and script fetching is happened asynchronously. Only after html parsing is completed, 
+then only script execution happens.
+IMP: Ex:
+1. async doesnt guarantee the order of execution of scripts. So if multiple scripts are inter-dependent, then defer is prefferred.
+2. If scripts are independent (Google AI scripts-not related), then async is preferred.
+Ref: https://www.youtube.com/watch?v=IrHmpdORLu8
+
+
+
