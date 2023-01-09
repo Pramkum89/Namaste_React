@@ -1,33 +1,32 @@
-#container {
-  background-color: aqua;
-}
-
-.header-main {
+.header {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
   margin: 10px;
   border: 1px solid black;
-  /* width: 50px; */
-  /* height: 50px; */
 }
 
-/* .logo {
-  height: 75px;
-  width: 75px;
-} */
-.logo-img {
-  height: 50px;
-  width: 50px;
+.nav-items > ul {
+  display: flex;
+  list-style-type: none;
 }
 
-.user-img {
-  height: 50px;
-  width: 50px;
+.nav-items > ul > li {
+  padding: 10px;
 }
 
-.search-input {
-  text-align: center;
-  border-radius: 10px;
-  border: 1px solid grey;
+.logo {
+  width: 70px;
+  padding: 5px;
+  margin-bottom: -4px;
+}
+
+.card {
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid gray;
+}
+
+.card > img {
+  width: 100%;
 }
