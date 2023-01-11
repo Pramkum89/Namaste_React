@@ -1,0 +1,83 @@
+Day 4: Show code
+
+Discord:
+https://discord.gg/jNn3pdv
+
+HW:
+
+- Can we use React.Fragment inside React.Fragment
+- Join items in an array
+- Download json viewer extension for chrome
+- Config driven UI
+- Optional chaining
+- Diff between arguments & parameters. ref: Namste Js
+pass in args, receive parameters
+spread operator
+Map is the best way to do Functional progrmming.
+map filter reduce in javascript
+Diferencce between foreach and map?
+Virtual DOM . Reconciliation. makes Reacct fast. 
+React fiber. React16. Reconcilation engine. Diff.
+- Why don't we use index as key?
+no key (not acceptable) <<<< index key(ok - use only if you dont have ay unique key) <<< unique key (best)
+- Read about React documentation: why not use index as key
+****IntvQ:
+- What is VirtualDOM?
+- What is reconcliation?
+- What are keys?
+- Can we have index as key? Yes. But not good practice.
+
+-----------------------
+Session notes:
+
+Build food Villa app: Coding
+
+IMP***
+1. Have a planning first
+	- Design applayout on your notes what all components required for your app.
+
+- Any JSX expression can have only one parent.
+- Suppose if we want to include two parents, we wrap it inside <div> element.
+- React gives us access to component React.Fragment (<>). imported from react library. 
+It is like a empty tag which directly replaces onto root element. It reduces unnecessary overhead of including parent <div> tags.
+
+- In functional componet, if "{" is used, then mandatory to write return statement to fetch elements.
+- We can write React.Fragment inside React.Fragment.
+
+*** Download json viewer - chrome extension plugin
+
+- Ex: Swiggy. Some cities has carousel data, some doesnt have. The UI rendering happens through config sent from backend. 
+***This is called as config-driven-ui.
+
+- props is known as properties. "pass props" : pass data as props to the functional component.
+Ex: <RestaurantCard restaurant = {restautantList[0]} />
+props are passed to functional components via arguments and parameters just like functions.
+Ex: function fn (params1, params2) { //-> Receive data in Parameters (rp)
+....
+}
+fn("abc", "xyz")  -> Pass data in Arguments (pa)
+
+***Virtual DOM
+- Representation of DOM with us is known as Virtual DOM.
+
+- Why we need Virtual DOM?
+- we need Virtual DOM for reconciliation in React.
+- Reconciliation is an algorithm that React uses to diff one tree(DOM) from another(VirtualDOM). It determines what needs 
+to be changed in UI and what need not to be changed in UI.
+
+- HMR algorithm is for files(uses File Watcher algorithms - Parcel). 
+React reconciliation algorithm is for DOMs(uses diff algorithm - Browser).
+
+- React fiber: New reconciliation engine(React 16 - changed diff algo)
+
+***
+- Never use index as a key if the order of elements may change. If no other properties of unique element, then only use index.
+
+Assignment References:
+- Code link :  https://bitbucket.org/namastedev/namaste-react-live/src/master/
+- React without JSX : https://reactjs.org/docs/react-without-jsx.html
+- VirtualDOM : https://reactjs.org/docs/faq-internals.html
+- Reconciliation : https://reactjs.org/docs/reconciliation.html
+- React Fiber Architecture : https://github.com/acdlite/react-fiber-architecture
+- React without Es6 : https://reactjs.org/docs/react-without-es6.html
+- Index Key as anti-pattern : https://robinpokorny.com/blog/index-as-a-key-is-an-anti-pattern/

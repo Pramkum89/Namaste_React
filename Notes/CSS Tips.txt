@@ -1,0 +1,9 @@
+CSS tips:
+
+html element -> attribute type -> description 
+
+div -> justify-content: space-between -> gives space between the div elements
+div/span/li/h2 -> display: flex -> arranges the items one after other in single line than in multiple lines
+ul -> list-style-type : none -> list will not be containing any dots, numbering 
+img -> width:100% -> resize image to width of the parent element
+div -> flex-wrap: wrap -> wraps the elements one after another as per page width
