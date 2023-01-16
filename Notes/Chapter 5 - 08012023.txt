@@ -1,0 +1,46 @@
+Chapter 5: Let's get hooked
+
+HW:
+- Read about React Folder Structure - reactjs
+
+Qs:
+- What is state?
+- What are hooks?
+- What is useState()
+
+----
+
+- Project file structure:
+	- Grouping by features or routes
+	- Grouping by file type
+- Variations of import, export mmodules : named, default, * as Obj
+
+- Build Search bar.
+- Input tag in JSX isn't same as the one written in HTML. 
+If we give value = "" in JSX, we will not be able to enter data in JSX, but in html we will be able to. Controlled by React.
+- React uses one-way data binding.
+
+- To make search input change as per user input: 
+Local variables in React are not preferred if its values are changing. So we need to maintain a react variable that changes. 
+This react variable is called state variable.
+Every component in React maintains a state; so you can put some variables onto state. Every time you create local variables that 
+requires to be changed, you use state.
+const [searchText, setSearchText] = useState("Empire") // returns array [variable name, method to update variable name]
+- We create state using useState hook.
+- Hooks are nothing but just functions.
+- We can achieve two-way data binding in react with the usage of useState() hook. two way: read variable, write variable
+It means changing of variable is reflected while reading as well as writing.
+- Two way data binding can be achieved by plain Javascript also. But it is messy & non-performant.
+
+IMP*** : Why do we need state variables?
+- Everytime you update local variable, React doesnt know local variable is updated. 
+So to keep our local variables in sync with UI, react provides what is known as  state variables. Created by using useState hook. 
+React keeps track of state variable internally. Whenever you update state variable, it will automatically re-render component.
+
+- Boolean values are never printed.
+console.log(true) => not printed in console
+console.log("True") => printed as string True
+
+- Behind the scenes, state keeps track of changes by React recconciliation process through diff alogirthm of trees 
+( real vs virtual DOM) and changes only that part of the component and not the entire component. 
+That is why react is fast & performant.
