@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { IMG_CDN_URL } from "../constants";
 // Named export
 const Title = () => {
@@ -9,6 +10,13 @@ const Title = () => {
 };
 
 const Header = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+
+  const LoggedInUser = (isLoggedInVal) => {
+    setIsLoggedIn(!isLoggedInVal);
+    console.log("inside LoggedInUser", isLoggedIn);
+  };
+
   return (
     <div className="header" style={{ backgroundColor: "lightgray" }}>
       <Title />
@@ -18,6 +26,25 @@ const Header = () => {
           <li>About</li>
           <li>Contact</li>
           <li>Cart</li>
+          {isLoggedIn ? (
+            <button
+              onClick={() => {
+                console.log("isLoggedInVal", isLoggedIn);
+                LoggedInUser(true);
+              }}
+            >
+              Login
+            </button>
+          ) : (
+            <button
+              onClick={() => {
+                console.log("isLoggedInVal", isLoggedIn);
+                LoggedInUser(false);
+              }}
+            >
+              Logout
+            </button>
+          )}
         </ul>
       </div>
     </div>

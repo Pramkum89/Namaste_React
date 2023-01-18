@@ -1,0 +1,99 @@
+Chapter 6: 14012023
+
+
+HW:
+- How to handle errors in api?
+- Read about shimmer design
+- Show shimmer ui
+- Not rendered component -> Early return
+- Check for all restaurants:  show shimmer
+	check for filtered results -> show shimmer if
+	Add it in 73 -logic
+	Search went off
+- Differenence between JS expression vs JS statement
+- JSX inside curly braces
+- Writing inside if else is a JS statement, but if conditional rendering is used, it is expression
+- Why data .json after search? why two times await is written?
+- Read about microservices vs monolith
+- Use CORS plugin to use api 
+- Read about CORS.
+- How to handle errors inside component?
+- First check for all restaurants, show shimmer.
+- Then show filtered restaurant if it is not there.
+- Difference between Javascript expression and statement.
+- Read about JSX curly braces.
+
+-----
+- We build the UI based on config from backend. This is called config-driven-ui. 
+Config can be json object or js file or js object.
+
+- React is fast because of fast DOM manipulation. DOM manipulation is expensive operation. React uses reconciliation 
+algorithms that diffs the real & virtual DOM and quickly updates the changed element.
+
+- React keeps track of state variables. Whenever any changes in state occurs, react(recconciliation algo) will reload/refresh 
+the entire component but it will update only the changed state values quickly. Hence,React is fast.
+
+- Microservices
+Monolith architecture : 
+Earlier days entire application was built by single project(JAVA). UI, SMS, APIs - all by JAVA. This is known as Monolith.
+Disadvantages: For one small change (button), entire project needs to be deployed.
+
+Microservices architecture:
+Application is built with multiple different projects. can run on different ports. 
+UI- React, notifications - Java, Backend api - Java, logs- python, authentication - golang
+Advantage: Deploy only the project that needs changes. Separation of concern.
+
+IMP*** : Food Villa app is UI microservice that we are building.
+
+- How do you call api in JS? fetch, promises, ajax
+fetch is provided by Window object from JS engine.
+
+2 ways of loading webpage:
+1. loads -> api call(300ms) -> render UI(500ms)
+2. loads -> render (dummy ui) -> api (300ms) -> re-render complete ui : UX is better. useEffect provides this facility.
+
+useEffect hook:
+- The useEffect Hook allows you to perform side effects in your components. 
+- It takes two paramters: callback function, dependency array.
+Callback function is a function which is called not immediately, but whenever an useEffect wants to be called.
+
+IMP***
+- First render called , then useEffect() is called
+
+IMP*** : Components re-renders whenever there is change in state or whenever there is change in props.
+
+- Add "Allow CORS..." - chrome extension to avoid CORS error in Browser. 
+
+- Best place to put api calls is inside useEffect.
+
+- Flow:
+First render called.
+Then useEffect called.
+Then re-rendering if any state changes.
+
+- Images takes time to load. Hence, not visible completely when debugging is applied. Critical rendering path.
+
+- Shimmer UI principle: A shimmer UI resembles the page's actual UI. It gives better user experience(UX). 
+Previously loading spinner was used. But after recent research, shimmer UI is used in almost all big company websites(youtube).
+
+- Avoid rendering component. Also known as Early return. You can also achieve by using Optional Chaining.
+
+IMP***:
+- we can write any Javascript expression inside {}. But not Javascript statement.
+
+Not valid: can't be written. This is because it is JS statement.
+{
+	let a =10;
+	console.log(a)
+}
+
+This can be written as below:
+{
+	(a=10; console.log(a))
+}
+
+IMP***: 
+- You cannot use if-else inside {}. This is a JS statement. 
+you need to use Ternary operator(? : ) inside {}. This is JS expression.
+
+- Diff algorithm for React fiber is written in react-core library
