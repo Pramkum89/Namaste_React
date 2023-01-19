@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { IMG_CDN_URL } from "../constants";
 import logo from "../assets/images/fv_logo.png";
-// Named export
+import { Link } from "react-router-dom";
+
 const Title = () => {
   return (
     <a href="/">
@@ -24,9 +25,15 @@ const Header = () => {
       <Title />
       <div className="nav-items">
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <a href="/contact">Contact</a>
+          </li>
           <li>Cart</li>
           {isLoggedIn ? (
             <button
