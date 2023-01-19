@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { IMG_CDN_URL } from "../constants";
+import logo from "../assets/images/fv_logo.png";
 // Named export
 const Title = () => {
   return (
     <a href="/">
-      <img className="logo" src={IMG_CDN_URL} alt="Title-logo" />
+      {/* <img className="logo" src={IMG_CDN_URL} alt="Title-logo" /> */}
+      <img className="logo" src={logo} alt="Title-logo" />
     </a>
   );
 };

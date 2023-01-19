@@ -30,7 +30,8 @@ const Body = () => {
     useEffect(() => {
         //Call API   
         getRestaurantList()
-    }, [])
+        console.log("useEffect called")
+    }, [searchText])
 
     async function getRestaurantList() {
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.992001&lng=77.534175&page_type=DESKTOP_WEB_LISTING")
