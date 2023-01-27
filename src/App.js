@@ -6,14 +6,15 @@ import Footer from "./components/Footer.js"
 import About from "./components/About.js"
 import Error from "./components/Error.js"
 import Contact from "./components/Contact.js"
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import RestaurantMenu from "./components/RestaurantMenu.jsx"
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"
 
 const AppLayout = () => {
   return (
     <>
       <React.Fragment>
         <Header />
-        <Body />
+        <Outlet />
         <Footer />
       </React.Fragment>
     </>
@@ -24,16 +25,27 @@ const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
-    errorElement: <Error />
+    errorElement: <Error />,
+    children: [
+      {
+        path: "/",
+        element: <Body />
+      },
+      {
+        path: "/about",
+        element: <About />
+      },
+      {
+        path: "/contact",
+        element: <Contact />
+      },
+      {
+        path: "/restaurant/:id",
+        element: <RestaurantMenu />
+      }
+    ]
   },
-  {
-    path: "/about",
-    element: <About />
-  },
-  {
-    path: "/contact",
-    element: <Contact />
-  }
+
 ])
 
 const root = ReactDOM.createRoot(document.getElementById("root"))

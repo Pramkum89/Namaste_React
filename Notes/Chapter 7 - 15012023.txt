@@ -1,0 +1,75 @@
+Chapter 7 :  15012023
+
+CORS plugin:
+Allow CORS : for chrome
+
+- If we dont pass anything in dependency array, then useEffect is called everytime after rendering.If no dependency array 
+is given, then useEffect() is called after each render. It is not dependent on any particular state. 
+Each time after rendering is done, useEffect will be executed.
+- If we pass [] empty array, then then useEffect is called only once after rendering.
+- If we pass any state/s inside dependency array, then useEffect is called once after initial render and 
+each time after state changes.
+
+- React says that never create one compoennt inside another component. Keep it outside. Because each time rendering happens,
+component will be created each time.
+
+- Never ever write useState inside if-else; for . Because React doesnt like inconsistencies whether 
+useState variable is created or not.
+
+- useState is a hook given to use as a local state variable inside a component. 
+Never use useState outside a functional component.
+
+- We can create multiple useEffect hooks inside a single component.
+
+- Import npm packages only when things get complex. Ex: Use formik library when more forms are requried.
+
+
+
+----
+
+HW:
+
+- Why is CDN a great place to host images?
+Because CDN is faster, caches image, optimized images are placed, returns very fast, 100% uptime.
+- Read about multiple browser routers : Read react-router official docs
+
+---
+React-router
+- Using latest version : 6+
+- Import createBrowserRouter; is a function which help us create routing configuration.
+- Import RouterProvider; a component which helps us to map app router to our app.
+- If a wrong path is used in browser, then by default react-router-dom package provides a component that throws Unhandled error.
+
+- Problem with anchor tag is that it refreshes the page on each click. So not useful for applications. We make use of Link 
+to build Single Page Applications(SPA).
+<a href ="/about" >  ==> reloads page
+<Link to = "/about" > ==> doesnt reload page
+
+- Two types of Routing:
+1. Client side routing : get the pages from client only. (React applications)
+2. Server side routing : get the pages through network calls (old - index.html loading from backend)
+
+- Link uses <a> tag behind the scenes. But doesnt reload page as it does in <a> tag.
+
+- Dynamic routing: Ex: /restaurant/:id
+	useParams() : hook used to dynamically read url(params)
+
+- More components helps in creating:	
+Modular
+Readable
+Reusable
+Maintainable
+Testable
+
+- What will happen if we write console.log( useState()) ?
+	It returns a useState function on console 
+
+- React Router enables "client side routing".
+In traditional websites, the browser requests a document from a web server, downloads and evaluates CSS and JavaScript assets,
+ and renders the HTML sent from the server. When the user clicks a link, it starts the process all over again for a new page.
+ 
+IMP links:
+
+Reacct-router DOM : https://reactrouter.com/en/main
+Client side routing: https://reactrouter.com/en/main/start/overview
+Formik: https://formik.org/

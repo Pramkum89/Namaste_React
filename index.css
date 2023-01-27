@@ -49,3 +49,7 @@
   background-color: lightgray;
   opacity: 0.5;
 }
+
+.menu {
+  display: flex;
+}

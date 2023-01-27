@@ -14,6 +14,7 @@ const Title = () => {
 
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
+  console.log("Check useState", useState());
 
   const LoggedInUser = (isLoggedInVal) => {
     setIsLoggedIn(!isLoggedInVal);
@@ -32,7 +33,7 @@ const Header = () => {
             <Link to="/about">About</Link>
           </li>
           <li>
-            <a href="/contact">Contact</a>
+            <Link to="/contact">Contact</Link>
           </li>
           <li>Cart</li>
           {isLoggedIn ? (
